@@ -51,16 +51,6 @@ body {
 }
 
 /* メッセージカード */
-.card {
-  position: relative;
-  display: grid;
-  place-content: center;
-  width: 600px;
-  height: 400px;
-  background-color: #2e683f;
-  overflow: hidden;
-}
-
 .card-inner {
   display: grid;
   place-content: center;
@@ -71,21 +61,20 @@ body {
   background-color: #ffffff;
   box-shadow: 2px 2px 4px #1f522e;
 }
-
 .card-inner p {
   font-family: "Homemade Apple", cursive;
   font-size: 2rem;
   font-weight: bold;
   font-style: normal;
-  color: rgba(239, 239, 239, 0.9);
-  text-shadow: 2px 2px 1px #ffffff, 0 0 #000000;
 }
-
-.card-inner p.deboss {
+.card-inner p.emboss {
   color: rgba(245, 245, 245, 0.9);
   text-shadow: 1px 1px 1px #d5d4d4;
 }
-
+.card-inner p.deboss {
+  color: rgba(239, 239, 239, 0.9);
+  text-shadow: 2px 2px 1px #ffffff, 0 0 #000000;
+}
 .card-inner:after {
   content: "";
   position: absolute;
