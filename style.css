@@ -1,0 +1,428 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding-bottom: 50px;
+}
+
+/* 版ズレ */
+.hanzure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  height: 500px;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #36455f;
+}
+.hanzure img {
+  position: absolute;
+  z-index: 30;
+  width: 100%;
+  height: 500px;
+  opacity: 1;
+  pointer-events: none; /* 画像はクリック不可にする（下のテキストに触れるように） */
+  mix-blend-mode: multiply;
+}
+.hanzure div {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100px;
+}
+.hanzure p {
+  position: absolute;
+  font-size: 4rem;
+}
+.hanzure p.front {
+  z-index: 10;
+  transform: translateX(2px) translateY(2px);
+  color: #ff5589;
+  mix-blend-mode: multiply;
+}
+.hanzure p.back {
+  color: #ffffff;
+}
+
+/* メッセージカード */
+.card {
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 600px;
+  height: 400px;
+  background-color: #2e683f;
+  overflow: hidden;
+}
+
+.card-inner {
+  display: grid;
+  place-content: center;
+  width: 580px;
+  height: 370px;
+  transform: rotate(-2deg);
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px #1f522e;
+}
+
+.card-inner p {
+  font-family: "Homemade Apple", cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: normal;
+  color: rgba(239, 239, 239, 0.9);
+  text-shadow: 2px 2px 1px #ffffff, 0 0 #000000;
+}
+
+.card-inner p.deboss {
+  color: rgba(245, 245, 245, 0.9);
+  text-shadow: 1px 1px 1px #d5d4d4;
+}
+
+.card-inner:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .3;
+  pointer-events: none;
+  mix-blend-mode: luminosity;
+}
+
+
+/* ステッカー */
+.paper {
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 800px;
+  height: 470px;
+  background-image: url("images/paper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.paper > img {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  aspect-ratio: 1/1;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.3));
+}
+.sticker-01 {
+  top: 90px;
+  left: 130px;
+  transform: rotate(-2deg);
+}
+.sticker-02 {
+  top: 200px;
+  left: 180px;
+  transform: rotate(15deg);
+}
+.sticker-03 {
+  top: 100px;
+  right: 100px;
+}
+
+
+/* チェキ */
+.photo {
+  display: grid;
+  place-content: center;
+}
+.photo-01, .photo-02 {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  width: 300px;
+  height: 450px;
+  transform: rotate(-5deg);
+  padding-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+.photo-01 > p, .photo-02 > p {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 30px;
+  color: #333333;
+}
+.photo-01, .photo-02 {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  width: 300px;
+  height: 450px;
+  transform: rotate(-5deg);
+  padding-top: 20px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+.photo-02 {
+  z-index: 10;
+  transform: rotate(5deg);
+}
+.photo-01::before, .photo-01::after, .photo-02::before, .photo-02::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 110px;
+  height: 44px;
+  transform: rotate(-20deg);
+  background-image: url("images/dot.jpg");
+  background-repeat: no-repeat;
+  background-size: 850%;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  opacity: 0.7;
+}
+.photo-01::after, .photo-02::after {
+  top: 400px;
+  right: -30px;
+  left: auto;
+  transform: rotate(-30deg);
+}
+.photo-02::before, .photo-02::after {
+  background-image: url("images/dot2.png");
+}
+.photo-01 > img, .photo-02 > img {
+  width: 270px;
+  height: 340px;
+  object-fit: cover;
+}
+
+
+/* プリントシール */
+.print-sticker {
+  margin-top: 150px;
+}
+.print-sticker01 {
+  display: grid;
+  gap: 10px;
+  width: 435px;
+  height: 281px;
+  transform: rotate(-3deg);
+  padding: 16px;
+  background-color: #111111;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  grid-template:
+      "img01 img01 title title" 147px
+      "img02 img03 img03 img04" auto /
+      129px 67px 52px 129px;
+}
+.print-sticker01-img {
+  width: 100%;
+  height: 147px;
+  object-fit: cover;
+  transition: scale 0.2s;
+}
+.print-sticker01-img01 {
+  grid-area: img01;
+}
+.print-sticker01-img02 {
+  height: 92px;
+  grid-area: img02;
+}
+.print-sticker01-img03 {
+  height: 92px;
+  grid-area: img03;
+}
+.print-sticker01-img04 {
+  height: 92px;
+  grid-area: img04;
+}
+.print-sticker01-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Homemade Apple", cursive;
+  color: #ffffff;
+  grid-area: title;
+}
+.print-sticker01-title-text01 {
+  font-size: 26px;
+}
+.print-sticker02 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+  height: 670px;
+  transform: translateX(400px) translateY(-400px) rotate(5deg);
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.print-sticker02-img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+.print-sticker02-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  font-family: "Homemade Apple", cursive;
+}
+.print-sticker02-title-text01 {
+  font-size: 22px;
+}
+
+
+/* シール */
+.paper-text {
+  display: grid;
+  gap: 20px;
+}
+.paper-text > p {
+  flex-wrap: wrap;
+  font-family: "Patua One", serif;
+  text-align: center;
+}
+.paper-text > p.text01 > span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-left: -10px;
+  font-size: 36px;
+  line-height: 1.3;
+  color: #ffffff;
+  border-radius: 50%;
+  background-color: #1f522e;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+}
+.paper-text > p.text01 > span:nth-child(1) {
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  transform: rotate(-1deg);
+  margin-left: 0;
+  font-size: 50px;
+  line-height: 1.6;
+  background-color: #f3d23c;
+}
+.paper-text > p.text01 > span:nth-child(2), .paper-text > p > span:nth-child(12) {
+  background-color: #75dce8;
+}
+.paper-text > p.text01 > span:nth-child(3) {
+  transform: translateY(-2px);
+  background-color: #9275e8;
+}
+.paper-text > p.text01 > span:nth-child(4) {
+  background-color: #75e87f;
+}
+.paper-text > p.text01 > span:nth-child(5) {
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  transform: translateY(-2px);
+  font-size: 40px;
+  line-height: 1.4;
+  background-color: #fcacf1;
+}
+.paper-text > p.text01 > span:nth-child(6) {
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  font-size: 50px;
+  line-height: 1.6;
+  background-color: #e87579;
+}
+.paper-text > p.text01 > span:nth-child(7) {
+  background-color: #75dce8;
+}
+.paper-text > p.text01 > span:nth-child(8) {
+  background-color: #f3d23c;
+}
+.paper-text > p.text01 > span:nth-child(9) {
+  background-color: #9275e8;
+}
+.paper-text > p.text01 > span:nth-child(10) {
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  font-size: 50px;
+  line-height: 1.6;
+  background-color: #75e87f;
+}
+.paper-text > p > span:nth-child(11) {
+  transform: translateY(5px);
+  background-color: #fcacf1;
+}
+
+
+/* レシート */
+.receipt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 620px;
+  padding: 20px;
+  background-image: url("images/paper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.receipt > * {
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+}
+.receipt > h2 {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 4px;
+  padding-block: 10px;
+}
+.receipt > .meisai {
+  font-size: 20px;
+  font-weight: bold;
+}
+.receipt > .setsumei {
+  width: 100%;
+  font-size: 14px;
+  padding-block: 30px;
+}
+.receipt > table {
+  width: 100%;
+  border-top: 2px dotted #333333;
+  border-bottom: 2px dotted #333333;
+  padding-block: 10px;
+}
+.receipt tbody {
+  display: grid;
+  gap: 10px;
+}
+.receipt tr {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.receipt th {
+  font-weight: normal;
+}
+.receipt .birthday {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: bold;
+  border-bottom: 2px solid #333333;
+  padding-block: 20px;
+  padding-inline: 5px;
+}
+.receipt .last-text {
+  width: 100%;
+  padding-top: 30px;
+  font-size: 14px;
+}
