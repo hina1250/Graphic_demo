@@ -50,6 +50,7 @@ body {
 }
 .hanzure p.back {
   color: #ffffff;
+  user-select: none;
 }
 @media(max-width: 700px) {
   .hanzure p {
